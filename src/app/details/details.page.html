@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="mid" *ngIf = "!character">Loading Characters</h2>
+  <ion-spinner *ngIf = "!character"></ion-spinner>
+
+  <span *ngIf = "character">
+    <ion-card>
+      <ion-card-title *ngIf="character.name"><ion-label  [innerHtml]="character.name"></ion-label></ion-card-title>
+      <ion-item *ngIf="character.height"><ion-label>Height: {{character.height}}</ion-label></ion-item>
+      <ion-item *ngIf="character.mass"><ion-label>Mass: {{character.mass}}</ion-label></ion-item>
+      <ion-item *ngIf="character.hair_color"><ion-label>Hair color: {{character.hair_color}}</ion-label></ion-item>
+      <ion-item *ngIf="character.skin_color"><ion-label>Skin color: {{character.skin_color}}</ion-label></ion-item>
+      <ion-item *ngIf="character.eye_color"><ion-label>Eye color: {{character.eye_color}}</ion-label></ion-item>
+      <ion-item *ngIf="character.birth_year"><ion-label>Birth year: {{character.birth_year}}</ion-label></ion-item>
+      <ion-item lines="none" *ngIf="character.gender" ><ion-label>Gender:  {{character.gender}}</ion-label></ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item  *ngFor="let film of character.films" >
+        <ion-label [innerHtml]="film"></ion-label>
+      </ion-item>
+    </ion-card>
+  </span>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "swapi-coccon",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
